@@ -9,3 +9,6 @@
 '''
 
 MAC = 'AAAA:BBBB:CCCC'
+print(MAC)
+print(MAC.replace(':','.'))
+
