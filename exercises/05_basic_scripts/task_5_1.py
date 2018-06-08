@@ -47,11 +47,10 @@ Mask:
 net = input("insert network. format 10.1.1.0/24 : ").replace('.',",").replace('/',',').split(',')
 mask = cidr_to_netmask(net[4]).replace('.',",").split(',')
 netmask = net + mask
-print(our_template.format(int(netmask[0]), int(netmask[1]), int(netmask[2]), int(netmask[3]),  int(netmask[4]), int(netmask[5]), int(netmask[6]), int(netmask[7]), int(netmask[8])))
-# или привести один раз
-nm = [ int(x) for x in netmask if x.isdigit() ]
-print(nm)
-print(our_template.format(nm[0], nm[1], nm[2], nm[3], nm[4], nm[5], nm[6], nm[7], nm[8]))
-# блин, неужели формат нельзя в цикле заполнять?
+#print(our_template.format(int(netmask[0]), int(netmask[1]), int(netmask[2]), int(netmask[3]),  int(netmask[4]), int(netmask[5]), int(netmask[6]), int(netmask[7]), int(netmask[8])))
+# Попробую уменьшить код.
+netmask = [ int(x) for x in netmask if x.isdigit() ]
+print(our_template.format( *netmask ))
+#  и этого тоже нет в курсе...
 
 # end
