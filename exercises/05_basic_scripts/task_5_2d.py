@@ -44,7 +44,7 @@ london_co = {
     }
 }
 
-dev = input('Enter device name (' + ', '.join(london_co.keys()) +'): ')
+dev = input('Enter device name (' + ', '.join(london_co.keys()) +'): ').lower()
 params = list(london_co[dev].keys())
 choice = input('parameter choice (' + ', '.join(params) + '): ')
 print(london_co.get(dev).get(choice.lower(), 'Такого параметра нет'))
