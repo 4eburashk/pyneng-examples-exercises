@@ -58,3 +58,12 @@ trunk_template = [
     'switchport trunk encapsulation dot1q', 'switchport mode trunk',
     'switchport trunk allowed vlan {}'
 ]
+
+rezhim = input('Enter interface mode (access/trunk): ')
+tip_nomer = input('Enter interface type and number (Fa0/6, Fa0/7, Gi0/3): ')
+vlans = input('Enter vlans (ex: 2 or 2,3,4,5): ')
+switch = {'access': 'access_template', 'trunk': 'trunk_template'}
+print('======================================')
+print('\n'.join(vars()[switch.get(rezhim)]).format(vlans))
+
+#end

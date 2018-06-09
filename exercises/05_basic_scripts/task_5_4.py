@@ -17,3 +17,13 @@ num_list = [10, 2, 30, 100, 10, 50, 11, 30, 15, 7]
 word_list = [
     'python', 'ruby', 'perl', 'ruby', 'perl', 'python', 'ruby', 'perl'
 ]
+
+inp = input("Eneter search (integer or string): ")
+if inp.isdigit():
+    print(num_list)
+    print([index for index, value in enumerate(num_list) if value == int(inp)][-1])
+else:
+    print(word_list)
+    print([index for index, value in enumerate(word_list) if value == str(inp)][-1])
+
+# end
